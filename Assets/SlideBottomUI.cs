@@ -9,6 +9,7 @@ public class SlideBottomUI : MonoBehaviour
     public int stageNumber;
     private float stageNumberBefore;
     private float timer;
+    public float holder;
     public GameObject Background;
 
     public RectTransform sliderComponent;
@@ -24,6 +25,7 @@ public class SlideBottomUI : MonoBehaviour
     }
     public void ChangePosition()
     {
+        holder = stageNumberBefore;
         float temporaryHolder = stageNumber - stageNumberBefore;
         //float divisionBetweenFrame = (31.3f * temporaryHolder) / 120.0f;
         //Debug.Log(temporaryHolder);

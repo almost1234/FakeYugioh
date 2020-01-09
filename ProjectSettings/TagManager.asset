@@ -9,6 +9,8 @@ TagManager:
   - back3
   - back4
   - 1
+  - Image
+  - Text
   layers:
   - Default
   - TransparentFX

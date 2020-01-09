@@ -63,7 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GetGold.cs" />
+    <Compile Include="Assets\MassiveRestart.cs" />
+    <Compile Include="Assets\PlayerData.cs" />
     <Compile Include="Assets\SlideBottomUI.cs" />
+    <Compile Include="Assets\StartandRestart.cs" />
+    <Compile Include="Assets\UIUpdater.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
