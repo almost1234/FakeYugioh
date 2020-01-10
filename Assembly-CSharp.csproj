@@ -66,6 +66,8 @@
     <Compile Include="Assets\GetGold.cs" />
     <Compile Include="Assets\MassiveRestart.cs" />
     <Compile Include="Assets\PlayerData.cs" />
+    <Compile Include="Assets\QuizContent.cs" />
+    <Compile Include="Assets\QuizLevel1.cs" />
     <Compile Include="Assets\SlideBottomUI.cs" />
     <Compile Include="Assets\StartandRestart.cs" />
     <Compile Include="Assets\UIUpdater.cs" />

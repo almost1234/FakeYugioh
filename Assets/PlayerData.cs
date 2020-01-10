@@ -6,20 +6,33 @@ public class PlayerData : MonoBehaviour
 {
     public int goldAvailable;
     public int gold;
-
-    public delegate void OnCollectibles();
-    public event OnCollectibles UpdateUI;
+    public int keys;
+    [SerializeField]
+    private UIUpdater uiUpdate;
 
     private void Start()
     {
         goldAvailable = 9;
         gold = 0;
+        keys = 0;
+
     }
 
-    public void OnPressCollectible(int number)
+    public void OnPressCollectible(int state, int number)
     {
-        gold = gold + number;
-        goldAvailable = goldAvailable - 1;
+        if (state == 1)
+        {
+            keys = keys + number;
+            goldAvailable = goldAvailable - 1;
+            Debug.Log("Key: " + keys.ToString());
+        }
+
+        else
+        {
+            gold = gold + number;
+            goldAvailable = goldAvailable - 1;
+        }
+        uiUpdate.ChangeNumber();
     }
 
 }

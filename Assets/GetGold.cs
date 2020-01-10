@@ -1,37 +1,59 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GetGold : MonoBehaviour
 {
-    private GameObject image;
-    private GameObject text;
     public RectTransform position;
-    private int counter;
+    private int randomizer;
+    private GameObject textGameObject, imageGameObject, image, text;
+    Sprite goldImage, keyImage;
+    Text contentText;
+    Image contentImage;
+    [SerializeField]
+    private PlayerData data;
+
     private void Start()
     {
         position = GetComponent<RectTransform>();
+        goldImage = Resources.Load<Sprite>("Sprites/gold");
+        keyImage = Resources.Load<Sprite>("Sprites/key");
+        // Load the pictures
+        textGameObject = GameObject.FindGameObjectWithTag("TextContentText");
+        contentText = textGameObject.GetComponent<Text>();
+        imageGameObject = GameObject.FindGameObjectWithTag("TextContentImage");
+        contentImage = imageGameObject.GetComponent<Image>();
+        // Load the contentPage text and image GameObject
+        // PlayerData function
         image = GameObject.FindGameObjectWithTag("Image");
         text = GameObject.FindGameObjectWithTag("Text");
 
+
     }
-    public void ContentPanel(int number)
+    public void ContentPanel()
     {
-        if (number == 1)
+        randomizer = Random.Range(1, 3);
+        Debug.Log("Status: " + randomizer.ToString());
+        int number = Random.Range(100, 500);
+        position.anchoredPosition = new Vector2Int(-5, -5);
+        if (randomizer == 1)
         {
-            Debug.Log("Activate Image");
             image.SetActive(true);
             text.SetActive(false);
+            contentText.text = "You get " + number.ToString() + " Keys!";
+            contentImage.sprite = keyImage;
         }
 
         else
         {
-            Debug.Log("Activate Text");
-            image.SetActive(false);
-            text.SetActive(true);
+            image.SetActive(true);
+            text.SetActive(false);
+            contentText.text = "You get " + number.ToString() + " Gold!";
+            contentImage.sprite = goldImage;
         }
-
-            position.anchoredPosition = new Vector2Int(-5, -5);
+        data.OnPressCollectible(randomizer, number);
+        
     }
 
     public void ClosePanel()

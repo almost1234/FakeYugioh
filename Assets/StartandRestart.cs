@@ -11,7 +11,7 @@ public class StartandRestart : MonoBehaviour
         move = GetComponent<RectTransform>();
         animator.SetBool("StartUp", true);
         gameObject.SetActive(true);
-        move.anchoredPosition = new Vector2(Random.Range(-40.0f,35.0f), Random.Range(-50.0f, 37.0f));
+        move.anchoredPosition = new Vector2(Random.Range(-40.0f,35.0f), Random.Range(-55.0f, -30.0f));
         new WaitForSeconds(1.0f);
         animator.SetBool("StartUp", false);
 
@@ -23,7 +23,7 @@ public class StartandRestart : MonoBehaviour
         new WaitForSeconds(1.0f);
         animator.SetBool("StartUp", true);
         gameObject.SetActive(true);
-        move.anchoredPosition = new Vector2(Random.Range(-40.0f, 35.0f), Random.Range(-50.0f, 37.0f));
+        move.anchoredPosition = new Vector2(Random.Range(-40.0f, 35.0f), Random.Range(-55.0f, -30.0f));
         animator.SetBool("StartUp", false);
     }
 }
