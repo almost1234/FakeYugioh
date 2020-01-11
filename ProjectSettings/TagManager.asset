@@ -13,6 +13,8 @@ TagManager:
   - Text
   - TextContentText
   - TextContentImage
+  - Gate
+  - Normal
   layers:
   - Default
   - TransparentFX
